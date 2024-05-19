@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}Lista de Jugadores{% endblock %}
+
+{% block content %}
+<div class="container-fluid text-center">
+    <div class="row">      
+        <div class="col">
+        <table class="table table-bordered border-primary">
+            <thead>
+            <tr>
+                <td class="table-dark">Nº. Registro</td>
+                <td class="table-dark">Nombres</td>
+                <td class="table-dark">Apellidos</td>
+                <td class="table-dark">CI</td>
+                <td class="table-dark">Fecha de Nacimiento</td>
+                <td class="table-dark">Edad</td>
+                <td class="table-dark">comments</td>
+                <td class="table-dark">Images</td>
+            </tr>
+            </thead>
+            {%- for player in players %}
+    
+
+            <tr>
+                <td class="bg-warning">{{ player.registro }}</td>
+                <td class="bg-warning">{{ player.name }}</td>
+                <td class="bg-warning">{{ player.last }}</td>
+                <td class="bg-warning">{{ player.ci }}</td>
+                <td class="bg-warning">{{ player.fechanacimiento }}</td>
+                <td class="bg-warning">{{ player.parentesco }}</td>
+                <td class="bg-warning">{{ player.notas }}</td>
+                <td class="bg-warning">{{ player.link_image }}</td>
+            </tr>
+            {%- endfor %}
+        </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

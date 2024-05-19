@@ -1,0 +1,102 @@
+[    
+    {
+        "name": "Eduardo",
+        "last": "Siles Lujan",
+        "ci": "627089-21",
+        "fechanacimiento": "1952-06-29",
+        "parentesco": "OTRO",
+        "ci_image": "",
+        "notas": "Ex Trabajador, No presenta documento",
+        "club": "Botafogo"
+    },
+    {
+        "name": "Jose",
+        "last": "Soria Salgueiro",
+        "ci": "3099395",
+        "fechanacimiento": "1966-03-18",
+        "parentesco": "ESPOSO",
+        "ci_image": "",
+        "notas": "Esposa - Narda Lucy Huayllas Montero de Soria",
+        "club": "Botafogo"
+    },
+    {
+        "name": "Carlos",
+        "last": "Soria Salgueiro",
+        "ci": "",
+        "fechanacimiento": "0000-00-00",
+        "parentesco": "HUANUNEÑO",
+        "ci_image": "",
+        "notas": "",
+        "club": "Botafogo"
+    },
+    {
+        "name": "Eusebio",
+        "last": "Perez Andrade",
+        "ci": "2731872",
+        "fechanacimiento": "1953-12-17",
+        "parentesco": "HUANUNEÑO",
+        "ci_image": "",
+        "notas": "",
+        "club": "Botafogo"
+    },
+    {
+        "name": "Pedro",
+        "last": "Taquichiri Andrade",
+        "ci": "",
+        "fechanacimiento": "18-05-1951",
+        "parentesco": "",
+        "ci_image": "",
+        "notas": "",
+        "club": "Botafogo"
+    },
+    {
+        "name": "Jose Luis",
+        "last": "Soria Guzman",
+        "ci": "6431699",
+        "fechanacimiento": "25-07-1977",
+        "parentesco": "",
+        "ci_image": "",
+        "notas": "",
+        "club": "Botafogo"
+    },
+    {
+        "name": "Saul",
+        "last": "Sulcata Arias",
+        "ci": "3103495",
+        "fechanacimiento": "10-07-1967",
+        "parentesco": "HUANUNEÑO",
+        "ci_image": "",
+        "notas": "",
+        "club": "Botafogo"
+    },
+    {
+        "name": "Edilberto Adolfo",
+        "last": "Perez Choque",
+        "ci": "",
+        "fechanacimiento": "24-02-1968",
+        "parentesco": "EX-TRABAJDOR",
+        "ci_image": "",
+        "notas": "",
+        "club": "Botafogo"
+    },
+    {
+        "name": "Efrain",
+        "last": "Bustamante Molina",
+        "ci": "3042703",
+        "fechanacimiento": "10-04-1966",
+        "parentesco": "HUANUNEÑO",
+        "ci_image": "",
+        "notas": "",
+        "club": "Botafogo"
+    },
+    {
+        "name": "Rene Orlando",
+        "last": "Callapa Condori",
+        "ci": "3555047",
+        "fechanacimiento": "15-07-1978",
+        "parentesco": "HUANUNEÑO",
+        "ci_image": "",
+        "notas": "",
+        "club": "Botafogo"
+    }
+]
