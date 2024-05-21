@@ -45,7 +45,8 @@
                 <div class="container">
                     <div class="row">                     
                         {% set name_pdf = player.name.replace(" ", "_").lower() + "_" + player.last.replace(" ", "_").lower()  %}
-                        {% set url_pdf = "resources/" + club_lower + "/" + name_pdf + ".pdf" %}   
+                        {% set new_name_pdf = name_pdf.replace("ñ", "n")  %}
+                        {% set url_pdf = "resources/" + club_lower + "/" + new_name_pdf + ".pdf" %}   
                         <a class="btn btn-danger view-pdf" href="{{ url_for('static', filename=url_pdf)}}">Ver PDF</a>
                     </div>
                 </div>
