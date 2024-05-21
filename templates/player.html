@@ -2,38 +2,60 @@
 {% block title %}Lista de Jugadores{% endblock %}
 
 {% block content %}
+<!--
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+-->
+<!------ Include the above in your HEAD tag ---------->
+
 <div class="container-fluid text-center">
     <div class="row">      
         <div class="col">
+            <h2>Club : {{ club }}</h2>
+            {% set club_lower = club.lower() %}            
         <table class="table table-bordered border-primary">
             <thead>
             <tr>
+                <td class="table-dark">#</td>
                 <td class="table-dark">Nº. Registro</td>
                 <td class="table-dark">Nombres</td>
                 <td class="table-dark">Apellidos</td>
                 <td class="table-dark">CI</td>
                 <td class="table-dark">Fecha de Nacimiento</td>
                 <td class="table-dark">Edad</td>
-                <td class="table-dark">comments</td>
-                <td class="table-dark">Images</td>
+                <td class="table-dark">Parentesco</td>
+                <td class="table-dark">Notas</td>
+                <td class="table-dark">Imagen</td>
             </tr>
             </thead>
-            {%- for player in players %}
-    
-
-            <tr>
-                <td class="bg-warning">{{ player.registro }}</td>
-                <td class="bg-warning">{{ player.name }}</td>
-                <td class="bg-warning">{{ player.last }}</td>
-                <td class="bg-warning">{{ player.ci }}</td>
-                <td class="bg-warning">{{ player.fechanacimiento }}</td>
-                <td class="bg-warning">{{ player.parentesco }}</td>
-                <td class="bg-warning">{{ player.notas }}</td>
-                <td class="bg-warning">{{ player.link_image }}</td>
-            </tr>
-            {%- endfor %}
+            {% set index = 1 %}
+            {% for player in players %}            
+            <tr class="{{ player.bg }}">
+                <td>{{ loop.index }}</td>
+                <td>{{ player.registro }}</td>
+                <td>{{ player.name }}</td>
+                <td>{{ player.last }}</td>
+                <td>{{ player.ci }}</td>
+                <td>{{ player.fechanacimiento }}</td>
+                <td>{{ player.edad }}</td>
+                <td>{{ player.parentesco }}</td>
+                <td>{{ player.notas }}</td>                
+                <td>
+                <div class="container">
+                    <div class="row">                     
+                        {% set name_pdf = player.name.replace(" ", "_").lower() + "_" + player.last.replace(" ", "_").lower()  %}
+                        {% set url_pdf = "resources/" + club_lower + "/" + name_pdf + ".pdf" %}   
+                        <a class="btn btn-danger view-pdf" href="{{ url_for('static', filename=url_pdf)}}">Ver PDF</a>
+                    </div>
+                </div>
+                </td>
+            </tr>            
+            {% endfor %}
         </table>
         </div>
     </div>
 </div>
+
+
 {% endblock %}

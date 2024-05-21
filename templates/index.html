@@ -1,6 +1,24 @@
 {% extends "base.html" %}
 {% block title %}Home Page{% endblock %}
 {% block content %}
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
+<script>
+  $(document).ready(function () {
+    $('#club a').on('click', function () {
+      var txt= ($(this).text());
+      console.log("Your Favourite club is "+txt);
+      var hiddenField = document.createElement("input");
+        hiddenField.type = "hidden";
+        hiddenField.name = 'club';
+        hiddenField.value = txt;
+
+      form1 = document.getElementById("myForm");
+      form1.appendChild(hiddenField);
+      document.body.appendChild(form1);
+      form1.submit();
+      });
+  });
+  </script>
 <div class="container text-center">
   <div class="row">
     
@@ -8,25 +26,27 @@
     </div>
     
     <div class="col">
+      <form method="POST" id="myForm" action="{{ url_for('club') }}">
       <div class="btn-group">
         <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Clubes
         </button>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="#">Jalakery</a>
+        <div class="dropdown-menu" id="club">
+          <a class="dropdown-item" href="#" id="jalakery">Jalakery</a>
           <a class="dropdown-item" href="#">Botafogo</a>
           <a class="dropdown-item" href="#">Cataricagua</a>      
-          <a class="dropdown-item" href="#">Vale Bajo</a>
+          <a class="dropdown-item" href="#">Valle Bajo</a>
           <a class="dropdown-item" href="#">Porvenir</a>
-          <a class="dropdown-item" href="#">Covolib</a>
+          <a class="dropdown-item" href="#">Coboliv</a>
           <a class="dropdown-item" href="#">Olimpic</a>
           <a class="dropdown-item" href="#">Rosario Central</a>
           <a class="dropdown-item" href="#">Deportivo Huanuni</a>
         </div>
       </div>
+    </form>
     </div>
 
-    <div class="col">      
+    <div class="col">     
     </div>
     
   </div>
