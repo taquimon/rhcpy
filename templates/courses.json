@@ -1,0 +1,153 @@
+[
+    {
+        "idLevel": 17,
+        "levelName": "Inicial",
+        "institutionId": 38,
+        "courses": [
+            {
+                "idCourse": 53,
+                "courseName": "Pre-Kinder-A",
+                "levelId": 17
+            },
+            {
+                "idCourse": 54,
+                "courseName": "Pre-Kinder-B",
+                "levelId": 17
+            },
+            {
+                "idCourse": 55,
+                "courseName": "Kinder-A",
+                "levelId": 17
+            },
+            {
+                "idCourse": 56,
+                "courseName": "Kinder-B",
+                "levelId": 17
+            }
+        ]
+    },
+    {
+        "idLevel": 18,
+        "levelName": "Primaria",
+        "institutionId": 38,
+        "courses": [
+            {
+                "idCourse": 57,
+                "courseName": "Primero-A",
+                "levelId": 18
+            },
+            {
+                "idCourse": 58,
+                "courseName": "Primero-B",
+                "levelId": 18
+            },
+            {
+                "idCourse": 59,
+                "courseName": "Segundo-A",
+                "levelId": 18
+            },
+            {
+                "idCourse": 60,
+                "courseName": "Segundo-B",
+                "levelId": 18
+            },
+            {
+                "idCourse": 61,
+                "courseName": "Tercero-A",
+                "levelId": 18
+            },
+            {
+                "idCourse": 62,
+                "courseName": "Tercero-B",
+                "levelId": 18
+            },
+            {
+                "idCourse": 63,
+                "courseName": "Cuarto-A",
+                "levelId": 18
+            },
+            {
+                "idCourse": 64,
+                "courseName": "Cuarto-B",
+                "levelId": 18
+            },
+            {
+                "idCourse": 65,
+                "courseName": "Quinto-A",
+                "levelId": 18
+            },
+            {
+                "idCourse": 66,
+                "courseName": "Quinto-B",
+                "levelId": 18
+            },
+            {
+                "idCourse": 67,
+                "courseName": "Sexto-A",
+                "levelId": 18
+            },
+            {
+                "idCourse": 68,
+                "courseName": "Sexto-B",
+                "levelId": 18
+            }
+        ]
+    },
+    {
+        "idLevel": 19,
+        "levelName": "Secundaria",
+        "institutionId": 38,
+        "courses": [
+            {
+                "idCourse": 69,
+                "courseName": "Segundo-A",
+                "levelId": 19
+            },
+            {
+                "idCourse": 70,
+                "courseName": "Segundo-B",
+                "levelId": 19
+            },
+            {
+                "idCourse": 71,
+                "courseName": "Tercero-A",
+                "levelId": 19
+            },
+            {
+                "idCourse": 72,
+                "courseName": "Tercero-B",
+                "levelId": 19
+            },
+            {
+                "idCourse": 73,
+                "courseName": "Cuarto-A",
+                "levelId": 19
+            },
+            {
+                "idCourse": 74,
+                "courseName": "Cuarto-B",
+                "levelId": 19
+            },
+            {
+                "idCourse": 75,
+                "courseName": "Quinto-A",
+                "levelId": 19
+            },
+            {
+                "idCourse": 76,
+                "courseName": "Quinto-B",
+                "levelId": 19
+            },
+            {
+                "idCourse": 77,
+                "courseName": "Sexto-A",
+                "levelId": 19
+            },
+            {
+                "idCourse": 78,
+                "courseName": "Sexto-B",
+                "levelId": 19
+            }
+        ]
+    }
+]

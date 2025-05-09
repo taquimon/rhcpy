@@ -1,6 +1,6 @@
 [    
     {
-        "registro": "BOT-151",
+        "register": "BOT-151",
         "name": "Omar Ruben",
         "last": "Valdivia Taquichiri",
         "ci": "4394937",
@@ -10,7 +10,7 @@
         "club": "Botafogo"
     },
     {
-        "registro": "BOT-152",
+        "register": "BOT-152",
         "name": "Carlos",
         "last": "Soria Salgueiro",
         "ci": "3506343",
@@ -20,7 +20,7 @@
         "club": "Botafogo"
     },
     {
-        "registro": "BOT-153",
+        "register": "BOT-153",
         "name": "Delfin",
         "last": "Apaza Peñarrieta",
         "ci": "4065986",
@@ -30,7 +30,7 @@
         "club": "Botafogo"
     },
     {
-        "registro": "BOT-154",
+        "register": "BOT-154",
         "name": "Victor Hugo",
         "last": "Inturias Perez",
         "ci": "4461796",
@@ -40,7 +40,7 @@
         "club": "Botafogo"
     },
     {
-        "registro": "BOT-155",
+        "register": "BOT-155",
         "name": "Rene Roberto",
         "last": "Zurita Martinez",
         "ci": "4464043",
@@ -50,7 +50,7 @@
         "club": "Botafogo"
     },
     {
-        "registro": "BOT-156",
+        "register": "BOT-156",
         "name": "Edilberto Adolfo",
         "last": "Perez Choque",
         "ci": "3519246",
@@ -60,7 +60,7 @@
         "club": "Botafogo"
     },
     {
-        "registro": "BOT-157",
+        "register": "BOT-157",
         "name": "Edwin",
         "last": "Taquichiri Montaño",
         "ci": "4460320",
@@ -70,7 +70,7 @@
         "club": "Botafogo"
     },
     {
-        "registro": "BOT-158",
+        "register": "BOT-158",
         "name": "Jose Luis",
         "last": "Soria Salguero",
         "ci": "3099395",
@@ -80,7 +80,7 @@
         "club": "Botafogo"
     },
     {
-        "registro": "BOT-159",
+        "register": "BOT-159",
         "name": "Marco Antonio",
         "last": "Montaño Bernal",
         "ci": "3099395",
@@ -90,7 +90,7 @@
         "club": "Botafogo"
     },
     {
-        "registro": "BOT-160",
+        "register": "BOT-160",
         "name": "Rene Orlando",
         "last": "Callapa Condori",
         "ci": "3555047",
@@ -100,7 +100,7 @@
         "club": "Botafogo"
     },
     {
-        "registro": "BOT-161",
+        "register": "BOT-161",
         "name": "Gilmar",
         "last": "Terceros Zurita",
         "ci": "6445678",
@@ -110,7 +110,7 @@
         "club": "Botafogo"
     },
     {
-        "registro": "BOT-162",
+        "register": "BOT-162",
         "name": "Gonzalo Serafin",
         "last": "Bustos Guevara",
         "ci": "3513461",
@@ -120,7 +120,7 @@
         "club": "Botafogo"
     },
     {
-        "registro": "BOT-163",
+        "register": "BOT-163",
         "name": "Saul",
         "last": "Sulcata Arias",
         "ci": "3103495",
@@ -130,7 +130,7 @@
         "club": "Botafogo"
     },
     {
-        "registro": "BOT-164",
+        "register": "BOT-164",
         "name": "Isaias",
         "last": "Morales Morales",
         "ci": "3775957",
@@ -140,7 +140,7 @@
         "club": "Botafogo"
     },
     {
-        "registro": "BOT-165",
+        "register": "BOT-165",
         "name": "Hernan",
         "last": "Salvatierra Balcazar",
         "ci": "3534465",
@@ -150,7 +150,7 @@
         "club": "Botafogo"
     },
     {
-        "registro": "BOT-166",
+        "register": "BOT-166",
         "name": "Regis Julio",
         "last": "Renteria Gandarillas",
         "ci": "3103568",
@@ -160,7 +160,7 @@
         "club": "Botafogo"
     },
     {
-        "registro": "BOT-167",
+        "register": "BOT-167",
         "name": "Ronald",
         "last": "Guevara Salinas",
         "ci": "7967399",
@@ -170,7 +170,7 @@
         "club": "Botafogo"
     },
     {
-        "registro": "BOT-168",
+        "register": "BOT-168",
         "name": "Pedro",
         "last": "Taquichiri Andrade",
         "ci": "3068355",
@@ -180,7 +180,7 @@
         "club": "Botafogo"
     },
     {
-        "registro": "BOT-169",
+        "register": "BOT-169",
         "name": "Pascual",
         "last": "Bustamante Bustamante",
         "ci": "2728109",
@@ -190,7 +190,7 @@
         "club": "Botafogo"
     },
     {
-        "registro": "BOT-170",
+        "register": "BOT-170",
         "name": "Juan Luis",
         "last": "Condori Paco",
         "ci": "5720329",
@@ -200,7 +200,7 @@
         "club": "Botafogo"
     },
     {
-        "registro": "BOT-171",
+        "register": "BOT-171",
         "name": "Jose Luis",
         "last": "Soria Guzman",
         "ci": "6431699",
@@ -210,13 +210,12 @@
         "club": "Botafogo"
     },
     {
-        "registro": "BOT-172",
+        "register": "BOT-172",
         "name": "Efrain",
         "last": "Bustamante Molina",
         "ci": "3042703",
         "fechanacimiento": "10-04-1966",
-        "parentesco": "HUANUNEÑO",
-        "ci_image": "",
+        "parentesco": "HUANUNEÑO",        
         "notas": "",
         "club": "Botafogo"
     }

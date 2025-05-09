@@ -26,6 +26,7 @@
                 <td class="table-dark">Edad</td>
                 <td class="table-dark">Parentesco</td>
                 <td class="table-dark">Notas</td>
+                <td class="table-dark">Gestion</td>
                 <td class="table-dark">Imagen</td>
             </tr>
             </thead>
@@ -33,14 +34,15 @@
             {% for player in players %}            
             <tr class="{{ player.bg }}">
                 <td>{{ loop.index }}</td>
-                <td>{{ player.registro }}</td>
+                <td>{{ player.register }}</td>
                 <td>{{ player.name }}</td>
                 <td>{{ player.last }}</td>
                 <td>{{ player.ci }}</td>
                 <td>{{ player.fechanacimiento }}</td>
                 <td>{{ player.edad }}</td>
-                <td>{{ player.parentesco }}</td>
-                <td>{{ player.notas }}</td>                
+                <td>{{ player.parentesco }}</td>                
+                <td>{{ player.notas }}</td>                                
+                <td>{{ player.gestion }}</td>
                 <td>
                 <div class="container">
                     <div class="row">                     

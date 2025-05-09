@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+{% block title %}Nuevo Jugador{% endblock %}
+{% block content %}
+<h1>Nuevo Jugador</h1>
+<script>
+    $SCRIPT_ROOT = {{ request.script_root|tojson }};
+    $(".active").removeClass("active");
+    $("#link-new").addClass("active");
+
+    function dropdownClub(val) {
+        console.log("Val: " + val.innerHTML);
+        if(val.innerHTML!=""){
+            $('#club').val(val.innerHTML);
+            $('#club').html(val.innerHTML);
+        } else {
+            $('#club').val('');
+            $('#club').html('Club');
+        }       
+        var hiddenField = document.createElement("input");
+        hiddenField.type = "hidden";
+        hiddenField.name = 'club';
+        hiddenField.value = val.innerHTML;
+
+        form1 = document.getElementById("form_player");
+        form1.appendChild(hiddenField);
+        document.body.appendChild(form1);
+    }
+    function dropdownParentesco(val) {
+        console.log("Val: " + val.innerHTML);
+        if(val.innerHTML!=""){
+            $('#parentesco').val(val.innerHTML);
+            $('#parentesco').html(val.innerHTML);
+        } else {
+            $('#parentesco').val('');
+            $('#parentesco').html('Club');
+        }       
+        var hiddenField = document.createElement("input");
+        hiddenField.type = "hidden";
+        hiddenField.name = 'parentesco';
+        hiddenField.value = val.innerHTML;
+
+        form1 = document.getElementById("form_player");
+        form1.appendChild(hiddenField);
+        document.body.appendChild(form1);
+    }
+    $(function() {
+        $('#buscar').bind('click', function() {
+            
+            $.getJSON($SCRIPT_ROOT + '/search_ci', {
+                ci: $('input[name="ci"]').val()            
+            }, function(data) {
+                console.log(data.result);
+            $('#search_result').show();
+            $("#search_result").html(data.result);
+            setTimeout(() => {
+                $('#search_result').hide()
+            }, 5000)
+            });
+            return false;
+        });
+    });
+    </script>
+{% if message: %}    
+<div id="alert" class="alert alert-success">
+    {{ message}}
+</div>    
+<script>
+    const alert = document.getElementById('alert');
+    setTimeout(() => {
+        $('#alert').alert('close')
+    }, 5000)
+</script>
+{% endif %}
+<div id="search_result" class="alert alert-danger" style="display:none;">    
+</div>    
+<form method="POST" id="form_player"> 
+    <label>Carnet de Identidad:</label> 
+    <input type="name" name="ci" placeholder="Carnet de Identidad" required> <button type="button" class="btn btn-success" id="buscar"> Buscar</button> <br/> 
+    <label>Nombre(s):</label> 
+    <input type="name" name="name" placeholder="Nombre(s)" required><br/> 
+    <label>Apellido(s):</label> 
+    <input type="name" name="last" placeholder="Apellido(s)" required><br/>     
+    <label>Fecha de Nacimiento:</label> 
+    <input type="name" name="fechanacimiento" placeholder="Fecha de Nac.: dd-mm-yyyy" required><br/> 
+    <div class="btn-group">
+        <button type="button" class="btn btn-warning dropdown-toggle" 
+        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="parentesco" name="parentesco">
+            Parentesco:
+        </button>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="#" onclick="dropdownParentesco(this);">HUANUNEÑO</a>
+            <a class="dropdown-item" href="#" onclick="dropdownParentesco(this);">EX-TRABAJADOR</a>
+            <a class="dropdown-item" href="#" onclick="dropdownParentesco(this);">ESPOSO</a>      
+            <a class="dropdown-item" href="#" onclick="dropdownParentesco(this);">HIJO</a>
+            <a class="dropdown-item" href="#" onclick="dropdownParentesco(this);">OTRO</a>
+            <a class="dropdown-item" href="#" onclick="dropdownParentesco(this);">NINGUNO</a>            
+        </div>
+    </div><br/><br/>
+    <label>Notas:</label> 
+    <input type="name" name="notas" placeholder="Notas"><br/>     
+    <div class="btn-group">
+        <button type="button" class="btn btn-warning dropdown-toggle" 
+        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="club" name="club">
+            Club:
+        </button>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="#"  onclick="dropdownClub(this);">Jalakery</a>
+            <a class="dropdown-item" href="#"  onclick="dropdownClub(this);">Botafogo</a>
+            <a class="dropdown-item" href="#"  onclick="dropdownClub(this);">Cataricagua</a>
+            <a class="dropdown-item" href="#" onclick="dropdownClub(this);">Valle Bajo</a>
+            <a class="dropdown-item" href="#" onclick="dropdownClub(this);">Porvenir</a>
+            <a class="dropdown-item" href="#" onclick="dropdownClub(this);">Coboliv</a>
+            <a class="dropdown-item" href="#" onclick="dropdownClub(this);">Olimpic</a>
+            <a class="dropdown-item" href="#" onclick="dropdownClub(this);">Rosario Central</a>
+            <a class="dropdown-item" href="#" onclick="dropdownClub(this);">Deportivo Huanuni</a>
+        </div>
+    </div><br/><br/>
+    <input type = "submit" value = "submit"/><br/> 
+</form> 
+{% endblock %}

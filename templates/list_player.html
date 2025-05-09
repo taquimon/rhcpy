@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block title %}Lista de Jugadores{% endblock %}
+
+{% block content %}
+<script>
+     $(document).ready(function () {
+    $(".active").removeClass("active");
+    $("#link-lista").addClass("active");
+    let attendeeTable = $('#listTable');    
+    new DataTable(attendeeTable , {
+                    info: false,
+                    ordering: true,
+                    paging: true,                    
+                    language: {
+                        "lengthMenu": "Mostrar _MENU_ filas por pagina",
+                        "zeroRecords": "No se encontro datos - lo sentimos",
+                        "info": "Mostrar pagina _PAGE_ de _PAGES_",
+                        "search": "Buscar",
+                        "infoEmpty": "No se encontraron datos",
+                        "infoFiltered": "(filtrar _MAX_ total filas)",
+                        "paginate": {
+                            "first": "Primer",
+                            "last": "Ultimo",
+                            "next": "Siguiente",
+                            "previous": "Anterior"
+                        }
+                    }
+                  });
+    });
+</script>
+<div class="container-fluid text-center">
+    <div class="row">      
+        <div class="col">                        
+        <table class="table table-bordered border-ligth" id="listTable">
+            <thead>
+            <tr>
+                <td class="table-dark">#</td>
+                <td class="table-dark">Nº. Registro</td>
+                <td class="table-dark">Nombres</td>
+                <td class="table-dark">Apellidos</td>
+                <td class="table-dark">CI</td>
+                <td class="table-dark">Fecha de Nacimiento</td>
+                <td class="table-dark">Edad</td>
+                <td class="table-dark">Parentesco</td>
+                <td class="table-dark">Notas</td>                              
+                <td class="table-dark">Club</td>
+            </tr>
+            </thead>
+            {% set index = 1 %}
+            {% for player in players %}            
+            <tr>
+                <td class="{{ player.bg }}">{{ loop.index }}</td>
+                <td class="{{ player.bg }}">{{ player.register }}</td>
+                <td class="{{ player.bg }}">{{ player.name }}</td>
+                <td class="{{ player.bg }}">{{ player.last }}</td>
+                <td class="{{ player.bg }}">{{ player.ci }}</td>
+                <td class="{{ player.bg }}">{{ player.fechanacimiento }}</td>                
+                <td class="{{ player.bg }}">{{ player.edad }}</td>
+                <td class="{{ player.bg }}">{{ player.parentesco }}</td>
+                <td class="{{ player.bg }}">{{ player.notas }}</td>                    
+                <td class="{{ player.bg }}">{{ player.club }}</td>
+            </tr>            
+            {% endfor %}
+        </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
