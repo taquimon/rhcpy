@@ -81,39 +81,35 @@
     <label>Apellido(s):</label> 
     <input type="name" name="last" placeholder="Apellido(s)" required><br/>     
     <label>Fecha de Nacimiento:</label> 
-    <input type="name" name="fechanacimiento" placeholder="Fecha de Nac.: dd-mm-yyyy" required><br/> 
-    <div class="btn-group">
-        <button type="button" class="btn btn-warning dropdown-toggle" 
-        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="parentesco" name="parentesco">
-            Parentesco:
-        </button>
-        <div class="dropdown-menu">
-            <a class="dropdown-item" href="#" onclick="dropdownParentesco(this);">HUANUNEÑO</a>
-            <a class="dropdown-item" href="#" onclick="dropdownParentesco(this);">EX-TRABAJADOR</a>
-            <a class="dropdown-item" href="#" onclick="dropdownParentesco(this);">ESPOSO</a>      
-            <a class="dropdown-item" href="#" onclick="dropdownParentesco(this);">HIJO</a>
-            <a class="dropdown-item" href="#" onclick="dropdownParentesco(this);">OTRO</a>
-            <a class="dropdown-item" href="#" onclick="dropdownParentesco(this);">NINGUNO</a>            
-        </div>
+    <input type="name" name="fechanacimiento" placeholder="Fecha de Nac.: dd-mm-yyyy" required><br/>     
+        Parentesco:        
+        <select class="selectpicker" id="parentesco" name="parentesco" data-style="btn-warning" data-width="fit">
+            <option >HUANUNEÑO</option>
+            <option>EX-TRABAJADOR</option>
+            <option>ESPOSO</option>      
+            <option>HIJO</option>
+            <option>OTRO</option>
+            <option>NINGUNO</option>            
+        </select>
     </div><br/><br/>
     <label>Notas:</label> 
     <input type="name" name="notas" placeholder="Notas"><br/>     
-    <div class="btn-group">
-        <button type="button" class="btn btn-warning dropdown-toggle" 
-        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="club" name="club">
+    <div class="btn-group">        
             Club:
-        </button>
-        <div class="dropdown-menu">
-            <a class="dropdown-item" href="#"  onclick="dropdownClub(this);">Jalakery</a>
-            <a class="dropdown-item" href="#"  onclick="dropdownClub(this);">Botafogo</a>
-            <a class="dropdown-item" href="#"  onclick="dropdownClub(this);">Cataricagua</a>
-            <a class="dropdown-item" href="#" onclick="dropdownClub(this);">Valle Bajo</a>
-            <a class="dropdown-item" href="#" onclick="dropdownClub(this);">Porvenir</a>
-            <a class="dropdown-item" href="#" onclick="dropdownClub(this);">Coboliv</a>
-            <a class="dropdown-item" href="#" onclick="dropdownClub(this);">Olimpic</a>
-            <a class="dropdown-item" href="#" onclick="dropdownClub(this);">Rosario Central</a>
-            <a class="dropdown-item" href="#" onclick="dropdownClub(this);">Deportivo Huanuni</a>
-        </div>
+            <select class="selectpicker" data-style="btn-warning" id="club" name="club" data-width="fit">
+                <option id="none">-- CLUB -- </option>
+                <option id="jalakery">Jalakery</option>
+                <option id="botafogo">Botafogo</option>
+                <option>Cataricagua</option>
+                <option>Valle Bajo</option>
+                <option>Porvenir</option>
+                <option>Coboliv</option>
+                <option>Olimpic</option>
+                <option>Rosario Central</option>
+                <option>Deportivo Huanuni</option>
+                <option>Chimba</option>
+              </div>
+            </select>
     </div><br/><br/>
     <input type = "submit" value = "submit"/><br/> 
 </form> 

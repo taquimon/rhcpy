@@ -186,7 +186,7 @@ def get_players_from_db(club_name=None):
         con.row_factory = dict_factory
 
         cur = con.cursor()
-        cur.execute("SELECT * FROM player WHERE club = ? and gestion = '2024' ORDER BY last", [club_name])
+        cur.execute("SELECT * FROM player WHERE club = ? and gestion in ('2025') ORDER BY last", [club_name])
         club_found = cur.fetchall()
 
 
