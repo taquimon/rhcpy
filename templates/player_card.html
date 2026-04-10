@@ -1,0 +1,230 @@
+{% extends "base.html" %}
+{% block title %}Tarjeta de Jugador{% endblock %}
+{% block content %}
+<style>
+    @media print {
+        body {
+            margin: 0;
+            padding: 0;
+            background: white;
+        }
+        .no-print {
+            display: none;
+        }
+        .card {
+            page-break-after: avoid;
+            box-shadow: none;
+            border: 2px solid #333;
+        }
+    }
+
+    .player-card {
+        background: linear-gradient(135deg, #cb4903 0%, #ce791a 100%);
+        max-width: 600px;
+        margin: 20px auto;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        padding: 30px;
+        color: white;
+        font-family: 'Arial', sans-serif;
+    }
+
+    .card-header {
+        text-align: center;
+        margin-bottom: 30px;
+        border-bottom: 3px solid rgba(255,255,255,0.3);
+        padding-bottom: 15px;
+    }
+
+    .card-header h1 {
+        margin: 0;
+        font-size: 28px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .card-header p {
+        margin: 5px 0 0 0;
+        font-size: 14px;
+        opacity: 0.9;
+    }
+
+    .card-body {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .info-section {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .info-label {
+        font-size: 12px;
+        text-transform: uppercase;
+        font-weight: bold;
+        opacity: 0.8;
+        margin-bottom: 5px;
+        letter-spacing: 1px;
+    }
+
+    .info-value {
+        font-size: 18px;
+        font-weight: bold;
+        word-break: break-word;
+    }
+
+    .full-width {
+        grid-column: 1 / -1;
+    }
+
+    .card-footer {
+        margin-top: 30px;
+        padding-top: 20px;
+        border-top: 3px solid rgba(255,255,255,0.3);
+        text-align: center;
+        font-size: 12px;
+        opacity: 0.9;
+    }
+
+    .actions {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        margin-top: 20px;
+        no-print: true;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .btn-print {
+        background-color: #667eea;
+        color: white;
+    }
+
+    .btn-print:hover {
+        background-color: #764ba2;
+    }
+
+    .btn-back {
+        background-color: #6c757d;
+        color: white;
+    }
+
+    .btn-back:hover {
+        background-color: #5a6268;
+    }
+
+    .btn-view-doc {
+        background-color: #28a745;
+        color: white;
+    }
+
+    .btn-view-doc:hover {
+        background-color: #218838;
+    }
+
+    .badge {
+        display: inline-block;
+        padding: 5px 10px;
+        background-color: rgba(255,255,255,0.3);
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: bold;
+        margin-top: 5px;
+    }
+
+    .age-badge {
+        background-color: rgba(255,215,0,0.5);
+    }
+
+    .parentesco-badge {
+        background-color: rgba(135,206,235,0.5);
+    }
+
+    @media (max-width: 768px) {
+        .card-body {
+            grid-template-columns: 1fr;
+        }
+        .player-card {
+            padding: 20px;
+        }
+    }
+</style>
+
+<div class="container">
+    <div class="player-card">
+        <div class="card-header">
+            <h1>{{ player.name }} {{ player.last }}</h1>
+            <p>Tarjeta de Información</p>
+        </div>
+
+        <div class="card-body">
+            <div class="info-section">
+                <span class="info-label">Carnet de Identidad</span>
+                <span class="info-value">{{ player.ci }}</span>
+            </div>
+
+            <div class="info-section">
+                <span class="info-label">Club</span>
+                <span class="info-value">{{ player.club }}</span>
+            </div>
+
+            <div class="info-section">
+                <span class="info-label">Fecha de Nacimiento</span>
+                <span class="info-value">{{ player.fechanacimiento }}</span>
+            </div>
+
+            <div class="info-section">
+                <span class="info-label">Edad</span>
+                <span class="info-value">{{ player.edad }} años</span>
+            </div>
+
+            <div class="info-section">
+                <span class="info-label">Parentesco</span>
+                <span class="info-value">
+                    {{ player.parentesco }}
+                    <span class="badge parentesco-badge">{{ player.parentesco }}</span>
+                </span>
+            </div>
+
+            {% if player.register %}
+            <div class="info-section">
+                <span class="info-label">Nº Registro</span>
+                <span class="info-value">{{ player.register }}</span>
+            </div>
+            {% endif %}
+
+            {% if player.notas %}
+            <div class="info-section full-width">
+                <span class="info-label">Notas</span>
+                <span class="info-value">{{ player.notas }}</span>
+            </div>
+            {% endif %}
+        </div>
+
+        <div class="card-footer">
+            <p>Residentes Huanuneños Cochabamba</p>
+            <p>Registrado: {{ player.club }}</p>
+        </div>
+    </div>
+
+    <div class="actions no-print">
+        <button class="btn btn-print" onclick="window.print()">Imprimir Tarjeta</button>
+        <a href="{{ url_for('list_player') }}" class="btn btn-back">Volver a la Lista</a>
+        {% if player.imagen %}
+        <a href="{{ player.imagen }}" target="_blank" class="btn btn-view-doc">Ver Documento</a>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}

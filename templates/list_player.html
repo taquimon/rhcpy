@@ -6,11 +6,11 @@
      $(document).ready(function () {
     $(".active").removeClass("active");
     $("#link-lista").addClass("active");
-    let attendeeTable = $('#listTable');    
+    let attendeeTable = $('#listTable');
     new DataTable(attendeeTable , {
                     info: false,
                     ordering: true,
-                    paging: true,                    
+                    paging: true,
                     language: {
                         "lengthMenu": "Mostrar _MENU_ filas por pagina",
                         "zeroRecords": "No se encontro datos - lo sentimos",
@@ -29,8 +29,8 @@
     });
 </script>
 <div class="container-fluid text-center">
-    <div class="row">      
-        <div class="col">                        
+    <div class="row">
+        <div class="col">
         <table class="table table-bordered border-ligth" id="listTable">
             <thead>
             <tr>
@@ -42,24 +42,28 @@
                 <td class="table-dark">Fecha de Nacimiento</td>
                 <td class="table-dark">Edad</td>
                 <td class="table-dark">Parentesco</td>
-                <td class="table-dark">Notas</td>                              
+                <td class="table-dark">Notas</td>
                 <td class="table-dark">Club</td>
+                <td class="table-dark">Acciones</td>
             </tr>
             </thead>
             {% set index = 1 %}
-            {% for player in players %}            
+            {% for player in players %}
             <tr>
                 <td class="{{ player.bg }}">{{ loop.index }}</td>
                 <td class="{{ player.bg }}">{{ player.register }}</td>
                 <td class="{{ player.bg }}">{{ player.name }}</td>
                 <td class="{{ player.bg }}">{{ player.last }}</td>
                 <td class="{{ player.bg }}">{{ player.ci }}</td>
-                <td class="{{ player.bg }}">{{ player.fechanacimiento }}</td>                
+                <td class="{{ player.bg }}">{{ player.fechanacimiento }}</td>
                 <td class="{{ player.bg }}">{{ player.edad }}</td>
                 <td class="{{ player.bg }}">{{ player.parentesco }}</td>
-                <td class="{{ player.bg }}">{{ player.notas }}</td>                    
-                <td class="{{ player.bg }}">{{ player.club }}</td>
-            </tr>            
+                 <td class="{{ player.bg }}">{{ player.notas }}</td>
+                 <td class="{{ player.bg }}">{{ player.club }}</td>
+                 <td class="{{ player.bg }}">
+                     <a href="{{ url_for('player_card', player_id=player.rowid) }}" class="btn btn-sm btn-info">Ver Tarjeta</a>
+                 </td>
+             </tr>
             {% endfor %}
         </table>
         </div>
