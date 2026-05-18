@@ -268,7 +268,7 @@ def get_players_from_db(club_name=None):
 
         cur = con.cursor()
         cur.execute(
-            "SELECT * FROM player WHERE club = ? and gestion in ('2025') ORDER BY last",
+            "SELECT * FROM player WHERE club = ? and gestion in ('2025','2026') ORDER BY last",
             [club_name],
         )
         club_found = cur.fetchall()
@@ -292,6 +292,37 @@ def dict_factory(cursor, row):
     for idx, col in enumerate(cursor.description):
         d[col[0]] = row[idx]
     return d
+
+
+@app.route("/update_player", methods=["POST"])
+@login_required
+def update_player():
+    print("Updating player...")
+    ci = request.form.get("ci")
+    name = request.form.get("name")
+    last = request.form.get("last")
+    parentesco = request.form.get("parentesco")
+    fecha_nacimiento = request.form.get("fecha_nacimiento")
+    gestion = request.form.get("gestion")
+    register = request.form.get("register")
+    print(
+        f"Received data: CI={ci}, Name={name}, Last={last}, Parentesco={parentesco}, Fecha Nacimiento={fecha_nacimiento}, Gestion={gestion}, Register={register}",
+    )
+
+    try:
+        with sqlite3.connect("rhc_database.db") as con:
+            con.row_factory = sqlite3.Row
+
+            cur = con.cursor()
+            cur.execute(
+                "UPDATE player SET name=?, last=?, parentesco=?, fechanacimiento=?, gestion=?, register=? WHERE ci=?",
+                (name, last, parentesco, fecha_nacimiento, gestion, register, ci),
+            )
+            con.commit()
+    except sqlite3.OperationalError as e:
+        print(e)
+
+    return jsonify(message="Jugador actualizado correctamente")
 
 
 @app.route("/logout")
